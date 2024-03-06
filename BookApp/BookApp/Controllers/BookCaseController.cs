@@ -18,5 +18,9 @@ namespace Warehouse.Controllers
         [HttpGet]
         [Route("")]
         public IEnumerable<BookCase> GetAllBooks() => bookCaseRepository.GetAll();
+
+        [HttpGet]
+        [Route("{bookCaseId}")]
+        public BookCase GetBookById(int bookCaseId) => bookCaseRepository.GetByID(bookCaseId);
     }
 }
