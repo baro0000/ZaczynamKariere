@@ -15,7 +15,19 @@ namespace Warehouse.ApplicationServices.API.Handlers
         }
         public Task<GetBooksResponse> Handle(GetBooksRequest request, CancellationToken cancellationToken)
         {
-            
+            var books = bookRepository.GetAll();
+            var domainBooks = books.Select(x => new Domain.Models.Book()
+            {
+                Id = x.Id,
+                Title = x.Title
+            });
+
+            var response = new GetBooksResponse()
+            {
+                Data = domainBooks.ToList()
+            };
+
+            return Task.FromResult(response);
         }
     }
 }
