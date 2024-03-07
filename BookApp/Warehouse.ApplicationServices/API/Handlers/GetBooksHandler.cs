@@ -1,4 +1,5 @@
-﻿using BookAppDataAccess.Entities;
+﻿using AutoMapper;
+using BookAppDataAccess.Entities;
 using MediatR;
 using Warehouse.ApplicationServices.API.Domain;
 using Warehouse.DataAccess;
@@ -8,23 +9,21 @@ namespace Warehouse.ApplicationServices.API.Handlers
     public class GetBooksHandler : IRequestHandler<GetBooksRequest, GetBooksResponse>
     {
         private readonly IRepository<Book> bookRepository;
+        private readonly IMapper mapper;
 
-        public GetBooksHandler(IRepository<BookAppDataAccess.Entities.Book> bookRepository)
+        public GetBooksHandler(IRepository<BookAppDataAccess.Entities.Book> bookRepository, IMapper mapper)
         {
             this.bookRepository = bookRepository;
+            this.mapper = mapper;
         }
         public Task<GetBooksResponse> Handle(GetBooksRequest request, CancellationToken cancellationToken)
         {
             var books = bookRepository.GetAll();
-            var domainBooks = books.Select(x => new Domain.Models.Book()
-            {
-                Id = x.Id,
-                Title = x.Title
-            });
+            var mappedBooks = mapper.Map<List<Domain.Models.Book>>(books);
 
             var response = new GetBooksResponse()
             {
-                Data = domainBooks.ToList()
+                Data = mappedBooks
             };
 
             return Task.FromResult(response);
