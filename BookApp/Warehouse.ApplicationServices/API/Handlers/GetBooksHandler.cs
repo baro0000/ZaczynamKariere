@@ -19,7 +19,11 @@ namespace Warehouse.ApplicationServices.API.Handlers
         }
         public async Task<GetBooksResponse> Handle(GetBooksRequest request, CancellationToken cancellationToken)
         {
-            var books = await queryExecutor.Execute(new GetBooksQuery());
+            var query = new GetBooksQuery()
+            {
+                Title = request.Title
+            };
+            var books = await queryExecutor.Execute(query);
             var mappedBooks = mapper.Map<List<Domain.Models.Book>>(books);
 
             var response = new GetBooksResponse()
