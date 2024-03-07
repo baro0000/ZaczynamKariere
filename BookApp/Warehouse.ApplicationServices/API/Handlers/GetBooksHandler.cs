@@ -2,7 +2,7 @@
 using BookAppDataAccess.Entities;
 using MediatR;
 using Warehouse.ApplicationServices.API.Domain;
-using Warehouse.DataAccess;
+using Warehouse.DataAccess.CQRS;
 using Warehouse.DataAccess.CQRS.Queries;
 
 namespace Warehouse.ApplicationServices.API.Handlers

@@ -7,6 +7,7 @@ using System.Globalization;
 using Warehouse.ApplicationServices.API.Domain;
 using Warehouse.ApplicationServices.Mappings;
 using Warehouse.DataAccess;
+using Warehouse.DataAccess.CQRS;
 
 var builder = WebApplication.CreateBuilder(args);
 
