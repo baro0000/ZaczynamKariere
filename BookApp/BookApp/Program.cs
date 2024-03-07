@@ -12,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+builder.Services.AddTransient<IQueryExecutor, QueryExecutor>();
 builder.Services.AddAutoMapper(typeof(BooksProfile).Assembly);
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddDbContext<WarehouseAppContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("WarehouseDatabaseConnection")));
