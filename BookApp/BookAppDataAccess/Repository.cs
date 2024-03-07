@@ -16,40 +16,40 @@ namespace Warehouse.DataAccess
             entities = context.Set<T>();
         }
 
-        public IEnumerable<T> GetAll()
+        public Task<List<T>> GetAll()
         {
-            return entities.AsEnumerable();
+            return entities.ToListAsync();
         }
 
-        public T GetByID(int id)
+        public Task<T> GetByID(int id)
         {
-            return entities.SingleOrDefault(e => e.Id == id);
+            return entities.SingleOrDefaultAsync(e => e.Id == id);
         }
 
-        public void Insert(T entity)
+        public Task Insert(T entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException("entity");
             }
             entities.Add(entity);
-            context.SaveChanges();
+            return context.SaveChangesAsync();
         }
 
-        public void Update(T entity)
+        public Task Update(T entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException("entity");
             }
-            context.SaveChanges();
+            return context.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+        public Task Delete(int id)
         {
             var entity = entities.SingleOrDefault(e => e.Id == id);
             entities.Remove(entity);
-            context.SaveChanges();
+            return context.SaveChangesAsync();
         }
     }
 }

@@ -17,10 +17,10 @@ namespace Warehouse.Controllers
 
         [HttpGet]
         [Route("")]
-        public IEnumerable<BookCase> GetAllBooks() => bookCaseRepository.GetAll();
+        public async Task<List<BookCase>> GetAllBooks() => await bookCaseRepository.GetAll();
 
         [HttpGet]
         [Route("{bookCaseId}")]
-        public BookCase GetBookById(int bookCaseId) => bookCaseRepository.GetByID(bookCaseId);
+        public async Task<BookCase> GetBookById(int bookCaseId) => await bookCaseRepository.GetByID(bookCaseId);
     }
 }

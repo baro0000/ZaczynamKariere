@@ -16,9 +16,9 @@ namespace Warehouse.ApplicationServices.API.Handlers
             this.bookRepository = bookRepository;
             this.mapper = mapper;
         }
-        public Task<GetBooksResponse> Handle(GetBooksRequest request, CancellationToken cancellationToken)
+        public async Task<GetBooksResponse> Handle(GetBooksRequest request, CancellationToken cancellationToken)
         {
-            var books = bookRepository.GetAll();
+            var books = await bookRepository.GetAll();
             var mappedBooks = mapper.Map<List<Domain.Models.Book>>(books);
 
             var response = new GetBooksResponse()
@@ -26,7 +26,7 @@ namespace Warehouse.ApplicationServices.API.Handlers
                 Data = mappedBooks
             };
 
-            return Task.FromResult(response);
+            return response;
         }
     }
 }

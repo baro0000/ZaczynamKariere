@@ -4,10 +4,10 @@ namespace Warehouse.DataAccess
 {
     public interface IRepository<T> where T : EntityBase
     {
-        IEnumerable<T> GetAll();
-        T GetByID(int id);
-        void Insert(T entity);
-        void Update(T entity);
-        void Delete(int id);
+        Task<List<T>> GetAll();
+        Task<T> GetByID(int id);
+        Task Insert(T entity);
+        Task Update(T entity);
+        Task Delete(int id);
     }
 }
