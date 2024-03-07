@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Warehouse.ApplicationServices.API.Domain;
 using Warehouse.DataAccess;
 using Warehouse.DataAccess.Entities;
 
@@ -8,19 +10,19 @@ namespace Warehouse.Controllers
     [Route("[controller]")]
     public class BookCaseController : ControllerBase
     {
-        private readonly IRepository<BookCase> bookCaseRepository;
+        private readonly IMediator mediator;
 
-        public BookCaseController(IRepository<BookCase> bookCaseRepository)
+        public BookCaseController(IMediator mediator)
         {
-            this.bookCaseRepository = bookCaseRepository;
+            this.mediator = mediator;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("")]
-        public async Task<List<BookCase>> GetAllBooks() => await bookCaseRepository.GetAll();
-
-        [HttpGet]
-        [Route("{bookCaseId}")]
-        public async Task<BookCase> GetBookById(int bookCaseId) => await bookCaseRepository.GetByID(bookCaseId);
+        public async Task<IActionResult> AddBookCase([FromBody] AddBookCaseRequest request)
+        {
+            var response = await mediator.Send(request);
+            return Ok(response);
+        }
     }
 }
