@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Warehouse.DataAccess.Entities;
 
-namespace BookAppDataAccess.Entities
+namespace Warehouse.DataAccess.Entities
 {
     public class Book : EntityBase
     {

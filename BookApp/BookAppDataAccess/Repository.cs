@@ -1,6 +1,4 @@
-﻿
-using BookAppDataAccess;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Warehouse.DataAccess.Entities;
 
 namespace Warehouse.DataAccess

@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Reflection;
 using Warehouse.ApplicationServices.API.Domain;
 
 namespace Warehouse.Controllers
@@ -20,7 +19,10 @@ namespace Warehouse.Controllers
         [Route("")]
         public async Task<IActionResult> GetAllBooks([FromQuery] string title = "")
         {
-            GetBooksRequest request = new GetBooksRequest() { Title = title};
+            GetBooksRequest request = new GetBooksRequest()
+            {
+                Title = title
+            };
             var response = await mediator.Send(request);
             return Ok(response);
         }

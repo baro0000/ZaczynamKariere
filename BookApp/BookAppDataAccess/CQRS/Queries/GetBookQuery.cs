@@ -1,6 +1,6 @@
-﻿using BookAppDataAccess;
-using BookAppDataAccess.Entities;
+﻿
 using Microsoft.EntityFrameworkCore;
+using Warehouse.DataAccess.Entities;
 
 namespace Warehouse.DataAccess.CQRS.Queries
 {

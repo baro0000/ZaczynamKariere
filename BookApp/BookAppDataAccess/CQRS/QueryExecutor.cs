@@ -1,5 +1,4 @@
-﻿using BookAppDataAccess;
-using Warehouse.DataAccess.CQRS.Queries;
+﻿using Warehouse.DataAccess.CQRS.Queries;
 
 namespace Warehouse.DataAccess.CQRS
 {

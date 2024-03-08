@@ -1,8 +1,7 @@
-﻿using BookAppDataAccess.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Warehouse.DataAccess.Entities;
 
-namespace BookAppDataAccess
+namespace Warehouse.DataAccess
 {
     public class WarehouseAppContext : DbContext
     {

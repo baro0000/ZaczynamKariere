@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using BookAppDataAccess.Entities;
 using MediatR;
 using Warehouse.ApplicationServices.API.Domain;
 using Warehouse.DataAccess.CQRS;

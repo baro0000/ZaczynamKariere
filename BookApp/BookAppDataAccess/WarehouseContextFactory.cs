@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace BookAppDataAccess
+namespace Warehouse.DataAccess
 {
     public class WarehouseContextFactory : IDesignTimeDbContextFactory<WarehouseAppContext>
     {

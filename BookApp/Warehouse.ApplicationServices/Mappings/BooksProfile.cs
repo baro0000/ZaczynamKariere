@@ -7,7 +7,7 @@ namespace Warehouse.ApplicationServices.Mappings
     {
         public BooksProfile()
         {
-            this.CreateMap<BookAppDataAccess.Entities.Book, Book>()
+            this.CreateMap<Warehouse.DataAccess.Entities.Book, Book>()
                 .ForMember(x => x.Id, y => y.MapFrom(z => z.Id))
                 .ForMember(x => x.Title, y => y.MapFrom(z => z.Title));
         }
