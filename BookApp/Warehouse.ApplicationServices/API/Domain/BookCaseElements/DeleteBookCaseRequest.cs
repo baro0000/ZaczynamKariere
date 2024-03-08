@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Warehouse.ApplicationServices.API.Domain
+namespace Warehouse.ApplicationServices.API.Domain.BookCaseElements
 {
     public class DeleteBookCaseRequest : IRequest<DeleteBookCaseResponse>
     {

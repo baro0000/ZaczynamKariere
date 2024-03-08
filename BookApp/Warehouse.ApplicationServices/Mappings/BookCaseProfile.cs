@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Warehouse.ApplicationServices.API.Domain;
+using Warehouse.ApplicationServices.API.Domain.BookCaseElements;
 
 namespace Warehouse.ApplicationServices.Mappings
 {

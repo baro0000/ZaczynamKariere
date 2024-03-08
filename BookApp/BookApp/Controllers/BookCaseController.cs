@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Warehouse.ApplicationServices.API.Domain;
+using Warehouse.ApplicationServices.API.Domain.BookCaseElements;
 
 namespace Warehouse.Controllers
 {

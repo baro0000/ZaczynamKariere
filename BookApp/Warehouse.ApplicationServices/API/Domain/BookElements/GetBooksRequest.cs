@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Warehouse.ApplicationServices.API.Domain
+namespace Warehouse.ApplicationServices.API.Domain.BookElements
 {
     public class GetBooksRequest : IRequest<GetBooksResponse>
     {

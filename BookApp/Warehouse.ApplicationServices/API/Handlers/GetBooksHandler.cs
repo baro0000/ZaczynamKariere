@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
-using Warehouse.ApplicationServices.API.Domain;
+using Warehouse.ApplicationServices.API.Domain.BookElements;
 using Warehouse.DataAccess.CQRS;
 using Warehouse.DataAccess.CQRS.Queries;
 

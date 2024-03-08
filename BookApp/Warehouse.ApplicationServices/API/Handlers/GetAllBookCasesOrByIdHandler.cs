@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Warehouse.ApplicationServices.API.Domain;
 using MediatR;
 using Warehouse.DataAccess.CQRS;
 using Warehouse.DataAccess.CQRS.Queries;
+using Warehouse.ApplicationServices.API.Domain.BookCaseElements;
 
 namespace Warehouse.ApplicationServices.API.Handlers
 {
