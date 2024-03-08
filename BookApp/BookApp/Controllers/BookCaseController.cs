@@ -37,9 +37,21 @@ namespace Warehouse.Controllers
 
         [HttpPut]
         [Route("{bookCaseId}")]
-        public async Task<IActionResult> GetAllBooks([FromRoute] int bookCaseId)
+        public async Task<IActionResult> PutBookCase([FromRoute] int bookCaseId)
         {
             var request = new PutBookCaseRequest()
+            {
+                BookCaseId = bookCaseId
+            };
+            var response = await mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpDelete]
+        [Route("{bookCaseId}")]
+        public async Task<IActionResult> DeleteBookCase([FromRoute] int bookCaseId)
+        {
+            var request = new DeleteBookCaseRequest()
             {
                 BookCaseId = bookCaseId
             };
