@@ -10,7 +10,7 @@ namespace Warehouse.ApplicationServices.Mappings
             this.CreateMap<AddBookCaseRequest, Warehouse.DataAccess.Entities.BookCase>()
                 .ForMember(x => x.Number, y => y.MapFrom(z => z.Number));
 
-            this.CreateMap<PutBookCaseRequest, Warehouse.DataAccess.Entities.BookCase>()
+            this.CreateMap<EditBookCaseRequest, Warehouse.DataAccess.Entities.BookCase>()
                 .ForMember(x => x.Id, y => y.MapFrom(z => z.BookCaseId));
 
             this.CreateMap<DeleteBookCaseRequest, Warehouse.DataAccess.Entities.BookCase>()

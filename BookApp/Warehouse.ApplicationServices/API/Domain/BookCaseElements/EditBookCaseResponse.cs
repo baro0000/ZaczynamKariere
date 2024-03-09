@@ -2,7 +2,7 @@
 
 namespace Warehouse.ApplicationServices.API.Domain.BookCaseElements
 {
-    public class PutBookCaseResponse : ResponseBase<BookCase>
+    public class EditBookCaseResponse : ResponseBase<BookCase>
     {
     }
 }

@@ -3,7 +3,7 @@ using Warehouse.DataAccess.Entities;
 
 namespace Warehouse.DataAccess.CQRS.Commands
 {
-    public class PutBookCaseCommand : CommandBase<BookCase, BookCase>
+    public class EditBookCaseCommand : CommandBase<BookCase, BookCase>
     {
         public override async Task<BookCase> Execute(WarehouseAppContext context)
         {

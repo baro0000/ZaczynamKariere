@@ -38,9 +38,9 @@ namespace Warehouse.Controllers
 
         [HttpPut]
         [Route("{bookCaseId}")]
-        public async Task<IActionResult> PutBookCase([FromRoute] int bookCaseId)
+        public async Task<IActionResult> EditBookCase([FromRoute] int bookCaseId)
         {
-            var request = new PutBookCaseRequest()
+            var request = new EditBookCaseRequest()
             {
                 BookCaseId = bookCaseId
             };
