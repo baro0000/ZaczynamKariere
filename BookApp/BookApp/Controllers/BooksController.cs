@@ -41,13 +41,32 @@ namespace Warehouse.Controllers
 
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> PostBook([FromQuery] /*string title, int year*/ PostBookRequest request)
+        public async Task<IActionResult> AddBook([FromQuery] /*string title, int year*/ AddBookRequest request)
         {
-            //var request = new PostBookRequest()
-            //{
-            //    Title = title,
-            //    Year = year
-            //};
+            var response = await mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpPut]
+        [Route("{bookId}")]
+        public async Task<IActionResult> EditBook(int bookId)
+        {
+            var request = new EditBookRequest()
+            {
+                BookId = bookId
+            };
+            var response = await mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpDelete]
+        [Route("{bookId}")]
+        public async Task<IActionResult> DeleteBook( int bookId)
+        {
+            var request = new DeleteBookRequest()
+            {
+                BookId = bookId
+            };
             var response = await mediator.Send(request);
             return Ok(response);
         }

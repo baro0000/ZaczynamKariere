@@ -2,7 +2,7 @@
 
 namespace Warehouse.ApplicationServices.API.Domain.BookElements
 {
-    public class PostBookResponse : ResponseBase<Book>
+    public class AddBookResponse : ResponseBase<Book>
     {
     }
 }

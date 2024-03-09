@@ -2,7 +2,7 @@
 
 namespace Warehouse.DataAccess.CQRS.Commands
 {
-    public class PostBookCommand : CommandBase<Book, Book>
+    public class AddBookCommand : CommandBase<Book, Book>
     {
         public override async Task<Book> Execute(WarehouseAppContext context)
         {
