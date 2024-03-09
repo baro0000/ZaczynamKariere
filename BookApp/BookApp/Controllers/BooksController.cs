@@ -38,5 +38,18 @@ namespace Warehouse.Controllers
             var response = await mediator.Send(request);
             return Ok(response);
         }
+
+        [HttpPost]
+        [Route("")]
+        public async Task<IActionResult> PostBook([FromQuery] /*string title, int year*/ PostBookRequest request)
+        {
+            //var request = new PostBookRequest()
+            //{
+            //    Title = title,
+            //    Year = year
+            //};
+            var response = await mediator.Send(request);
+            return Ok(response);
+        }
     }
 }

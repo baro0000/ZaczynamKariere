@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Warehouse.DataAccess.Entities;
 
 namespace Warehouse.DataAccess.Entities
 {
     public class Book : EntityBase
     {
-        public int BookCaseId { get; set; }
+        [ForeignKey("BookCase")]
+        public int? BookCaseId { get; set; }
         public BookCase BookCase { get; set; }
         public List<Author> Authors { get; set; }
 

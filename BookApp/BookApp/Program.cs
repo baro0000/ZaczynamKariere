@@ -10,9 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddTransient<IQueryExecutor, QueryExecutor>();
 builder.Services.AddTransient<ICommandExecutor, CommandExecutor>();
-builder.Services.AddAutoMapper(typeof(BooksProfile).Assembly);
+builder.Services.AddAutoMapper(typeof(BookProfile).Assembly);
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-builder.Services.AddDbContext<WarehouseAppContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("WarehouseDatabaseConnectionLaptop")));
+builder.Services.AddDbContext<WarehouseAppContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("WarehouseDatabaseConnection")));
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssemblyContaining(typeof(ResponseBase<>)));
 
